@@ -1,0 +1,174 @@
+body {
+    height: 100%;
+    width: 100%;
+    background: #FFFCF7;
+}
+
+.header {
+    background-color: #2C6E49;
+}
+
+.bod {
+    background-color: #1A1423;
+    height: 100%;
+}
+.btnmenu{
+    display: flex;
+    justify-content: center;
+}
+.img1{
+    width: 25px;
+}
+aside h3 {
+    color: #FEFAE0;
+    margin-top: 30px;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+aside ul {
+    list-style: none
+}
+
+aside ul li {
+    color: #FEFAE0;
+    display: block;
+    margin-top: 20px;
+    transition: transform .2s ease;
+
+}
+
+aside ul li:hover, aside ul a:hover {
+    color: #FEFAE0;
+    transform: scale(1.05);
+}
+
+main .features {
+    position: absolute;
+    font-weight: 700;
+    color: #1A1423;
+    margin-top: 200px;
+    text-align: center;
+    width: 75%;
+    left: 220px;
+}
+
+main .features h1 {
+    font-size: 50px;
+}
+
+main .features p {
+    max-width: 400px;
+    margin: 20px auto;
+}
+
+main .container {
+    position: absolute;
+    left: 450px;
+
+}
+
+main .load {
+    font-weight: 700;
+}
+
+main .load h1 {
+    text-align: center;
+}
+
+main .load p {
+    font-size: 20px;
+}
+
+.button1 {
+    position: absolute;
+    top: 1450px;
+}
+
+.button2 {
+    position: absolute;
+    left: 250px;
+    top: 1450px;
+}
+
+main .container {
+    position: absolute;
+    left: 450px;
+
+}
+
+main .inference {
+    font-weight: 700;
+}
+
+main .inference h1 {
+    text-align: center;
+}
+
+main .inference p {
+    font-size: 20px;
+}
+
+.button3 {
+    position: absolute;
+    top: 1500px;
+}
+
+.button4 {
+    position: absolute;
+    left: 250px;
+    top: 1500px;
+}
+
+main .panel {
+    display: flex;
+    flex-direction: row;
+    background-color: #2C6E49;
+    width: 100%;
+    border: 2px solid #1A1423;
+}
+.news{
+    font-size: 18px;
+    padding: 10px;
+}
+.reg {
+    color: #1A1423;
+    transition: transform .1s ease;
+}
+.reg:hover{
+    color: #1A1423!important;
+    transform: scale(1.02);
+}
+
+.login{
+    color: #1A1423;
+    margin-left: 10px;
+    transition: transform .1s ease;
+}
+.login:hover{
+    color: #1A1423!important;
+    transform: scale(1.05);
+}
+.logout{
+    color: #1A1423;
+    transition: transform .1s ease;
+}
+.logout:hover{
+    color: #1A1423!important;
+    transform: scale(1.05);
+}
+.logas {
+    color: #1A1423;
+    font-size: 20px;
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px;
+}
+
+a {
+    text-decoration: none;
+    color: #1A1423;
+}
+footer{
+
+}

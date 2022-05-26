@@ -1,0 +1,80 @@
+body{
+    background: #FFFCF7;
+}
+.form-container{
+ background-color: #FFFAFF;
+ text-align: center;
+ padding: 100px 80px;
+ border-radius: 10px;
+ top: 200px;
+ box-shadow: 0 0 25px -15px rgba(0,0,0,0.3);
+ position: absolute;
+ left: 700px;
+}
+.form-container:before,
+.form-container:after{
+ content: '';
+ background-color: #303036;
+ height: 50%;
+ width: 4px;
+ position: absolute;
+ left: 10px;
+ top: 10px;
+}
+.form-container:after{
+ top: auto;
+ bottom: 10px;
+ left: auto;
+ right: 10px;
+}
+
+.form-horizontal .form-group{ margin: 0 0 15px; }
+.form-horizontal .form-group:last-of-type{
+ text-align: left;
+ margin-bottom: 35px;
+}
+.form-horizontal .form-control{
+ color: #303036;
+ background: #FFFAFF;
+ font-size: 14px;
+ font-weight: 500;
+ letter-spacing: 1px;
+ height: 40px;
+ padding: 6px 12px;
+ border-radius: 5px;
+ border: 2px solid #F2F5F6;
+ box-shadow: none;
+}
+.form-horizontal .form-control:focus{
+ border-color: #303036;
+ box-shadow: none;
+}
+.form-horizontal .form-control::placeholder{
+ color: #e1e1e1;
+ font-size: 14px;
+ font-weight: 300;
+}
+.back a{
+    text-decoration: none;
+    color: #303036;
+    font-size: 14px;
+    font-weight: 500;
+}
+.cont{
+    background-color: #303036;
+    margin-top: 20px;
+    border-radius: 8px;
+    border: 1px solid #F2F5F6;
+    color: #FFFAFF;
+    box-shadow: 0 0 25px -15px rgba(0,0,0,0.3);
+}
+
+.signup{
+    background-color: #FFFAFF;
+    margin-top: 20px;
+    border-radius: 8px;
+    border: 1px solid #303036;
+    color: #303036;
+    font-size: 16px;
+    font-weight: 500;
+}

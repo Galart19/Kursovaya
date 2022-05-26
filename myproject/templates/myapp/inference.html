@@ -1,0 +1,80 @@
+{% extends 'layout.html' %}
+
+{% block title %}Вывод HTML документа{% endblock %}
+
+{% block content %}
+{% include 'myapp/panel.html' %}
+<div class="inference">
+<div class="container">
+<div class="justify-content-end row p-4">
+<h1 class="p-2 ">Вывести HTML документ из django</h1>
+<p class="p-1 ">Создание приложения:<br>
+Нужно создать приложение, которое и будет выводить наш файл: django-admin startapp название приложения. Приложения нужны для разделения сайта на логические части, вроде чата/новостей/групп. В папке приложения создать файл urls.py, в который скопировать, содержимое такого же файла из папки проекта.</p>
+<p class="p-1 ">Создание директории для .html файлов:<br>
+в settings.py импортировать модуль os</p>
+    <div class="row">
+        <div class="col m-1 p-2 bg-light border">
+            <div class="container1">
+            -import os
+            </div>
+        </div>
+    </div>
+<p class="p-1 ">Он нужен для того, чтобы мы могли изпользовать метод os.path.join() и добавить в 'DIRS' внутри списка 'TEMPLATES' директорию, прописав её относительно BASE DIR:</p>
+    <div class="row">
+        <div class="col m-1 p-2 bg-light border">
+            <div class="container1">
+            TEMPLATES = [
+                <br>{
+                    <br>'BACKEND': 'django.template.backends.django.DjangoTemplates',
+                    <br>'DIRS': [
+                        <br>os.path.join(BASE_DIR, 'templates')
+                    <br>],
+                    <br>'APP_DIRS': True,
+                    <br>'OPTIONS': {
+                        <br>'context_processors': [
+                            <br>'django.template.context_processors.debug',
+                            <br>'django.template.context_processors.request',
+                            <br>'django.contrib.auth.context_processors.auth',
+                            <br>'django.contrib.messages.context_processors.messages',
+                        <br>],
+                    <br>},
+                <br>},
+            <br>]
+            </div>
+        </div>
+    </div>
+<p class="p-1 ">Создать папку templates в указанной выше директории (как правило - рядом с файлом manage.py) в этой папке будут храниться все .html темплейты/страницы. Можно создать там .html документ, который будет выводиться</p>
+<p class="p-1 ">Указать джанго, по какому URL-адресу выводить файл:</p>
+<p class="p-1 ">Импортировать include():</p>
+<div class="row">
+        <div class="col m-1 p-2 bg-light border">
+            <div class="container1">
+            -from django.urls import include
+            </div>
+       </div>
+</div>
+<p class="p-1 ">В название проекта/urls.py по шаблону, который указан в комментарии сверху, подключить файл название проекта/urls.py из созданного ранее приложения через include() в списке urlpatterns:</p>
+<div class="row">
+        <div class="col m-1 p-2 bg-light border">
+            <div class="container1">
+            -urlpatterns = [
+                <br>path('', include('app.urls')),
+                <br>path('admin/', admin.site.urls),
+            <br>]
+            </div>
+       </div>
+</div>
+<form action="inference" target="_blank">
+    <div class="button3">
+    <button class="p-2 m-1 btn" style="background-color: #303036; color: #FFFAFF">Вывод HTML документа</button>
+    </div>
+</form>
+<form action="test1" target="_blank">
+    <div class="button4">
+    <button class="p-2 m-1 btn" style="background-color: #303036; color: #FFFAFF">Перейти к тесту</button>
+    </div>
+</form>
+</div>
+</div>
+</div>
+{% endblock %}

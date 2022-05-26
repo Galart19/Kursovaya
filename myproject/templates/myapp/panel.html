@@ -1,0 +1,63 @@
+{% block content %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'myapp/css/main.css'%}">
+<nav class="fixed-top navbar-light bg-light">
+<div class="panel">
+<div class="btnmenu">
+<button class="btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling"> <img class="img1" src=" {%static 'myapp/img/justify.svg'%}"> </button>
+</div>
+<div class="offcanvas offcanvas-start" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
+<div class="header">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="offcanvasScrollingLabel">Colored with scrolling</h5>
+    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+</div>
+<div class="bod">
+  <div class="offcanvas-body">
+    <p><aside>
+    <h3>Навигация</h3>
+    <ul>
+        <a class="text-decoration-none" href="{% url 'home' %}">
+            <li><i class="fas fa-home"></i> Главная</li>
+        </a>
+        <a class="text-decoration-none" href="{% url 'load' %}">
+            <li><i class="fab fa-python"></i> Установка Django</li>
+        </a>
+        <a class="text-decoration-none" href="{% url 'inference' %}">
+            <li><i class="fab fa-html5"></i> Вывод HTML документа</li>
+        </a>
+    </ul>
+</aside></p>
+</div>
+  </div>
+</div>
+
+<script>
+    offcanvasElementList = [].slice.call(document.querySelectorAll('.offcanvas'))
+    var offcanvasList = offcanvasElementList.map(function (offcanvasEl) {
+        return new bootstrap.Offcanvas(offcanvasEl)
+    })
+</script>
+<!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+  <div class="container-fluid">
+      <div class="logas">
+          {% if request.user.is_authenticated %}
+                    <div class="logout">
+                    <a class="logout" href="{% url 'logout' %}">{{request.user.username}} || Выйти из аккаунта</a>
+                    </div>
+         {% else %}
+      <div class="reg">
+        <a class="reg" href="{% url 'register' %}">Регистрация</a>
+      </div>
+      <div class="login">
+        <a class="login" href="{% url 'login' %}">Вход</a>
+      </div>
+         {% endif %}
+      </div>
+    </div>
+</div>
+</nav>
+{% endblock %}

@@ -1,0 +1,50 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+{% load static %}
+
+{% include 'myapp/panel.html' %}
+<link rel="stylesheet" href="{% static 'myapp/css/register.css' %}">
+<div class="form-container">
+
+    <div class="row justify-content-center">
+        <div class="">
+            <h4 class="text-dark text-center">Регистрация</h4>
+            <br>
+            <form method="POST">
+                {% csrf_token %}
+                <div class="form-horizontal">
+                <h5 class="">Имя пользователя</h5>
+                <input name="username" class="form-control" type="text" placeholder="Иван">
+                <h5 class="">Пароль</h5>
+                <input name="password1" class="form-control" type="password" placeholder="********">
+                <h5 class="">Подтверждение пароля</h5>
+                <input name="password2" class="form-control" type="password" placeholder="********">
+                </div>
+                <br>
+                <button type="submit" class="signup">Регистрация</button>
+
+            </form>
+            {% for message in messages %} <!-- displaying the messages if there is any: -->
+            <br>
+            <div class="bg-warning border rounded p-1">
+                <h6 class=" text-dark text-center mt-1">{{message}}</h6>
+            </div>
+            {% endfor %}
+
+        </div>
+        <br>
+        <!-- login indicator -->
+            {% if request.user.is_authenticated %}
+            <div class="cont">
+                <h6 class="acc">Вы уже вошли в аккаунт</h6>
+            </div>
+            {% endif %}
+            <div class="back">
+            <a href="/"> Назад на главную</a>
+            </div>
+    </div>
+</div>
+
+{% endblock  %}
